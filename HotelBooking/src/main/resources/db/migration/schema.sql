@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS guests;
 create table hotels (
     id serial primary key,
     roomNum int,
-    citySt varchar(50),
+    citySt varchar(50)
     roomType varchar(50),
 );
 
