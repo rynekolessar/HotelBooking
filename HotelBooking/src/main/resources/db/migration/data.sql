@@ -13,5 +13,4 @@ INSERT INTO rooms(id, roomType, cost) VALUES
     ('001', 'Suite', 200.00),
     ('002', 'King', 100.00),
     ('003', 'Queen', 50.00);
-
     
