@@ -6,59 +6,59 @@ DROP TABLE IF EXISTS Motels;
 DROP TABLE IF EXISTS Rooms;
 
 
-create table Motels {
+create table Motels (
     motelcode int,
     citySt varchar(50),
-    primary key (motelcode),
-};
+    primary key (motelcode)
+);
 
 create table Rooms (
     roomcode int,
     roomType varchar(50),
     cost decimal (10,2),
-    primary key (roomcode),
+    primary key (roomcode)
 );
 
 create table ChicagoMotel (
-    motelcode int,
+    chicagocode int,
     roomNum int,
     citySt varchar(50),
     roomType varchar(50),
     roomcode int,
-    primary key (motelcode) 
-    foreign key (motelcode) references Motels(motelcode),
-    foreign key (roomcode) references Rooms(roomcode),
+    primary key (roomcode), 
+    foreign key (chicagocode) references Motels(motelcode),
+    foreign key (roomcode) references Rooms(roomcode)
 );
 
 create table NYMotel (
-    motelcode int,
+    nycode int,
     roomNum int,
     citySt varchar(50),
     roomType varchar(50),
     roomcode int,
-    primary key (motelcode) 
-    foreign key (motelcode) references Motels(motelcode),
-    foreign key (roomcode) references Rooms(roomcode),
+    primary key (roomcode), 
+    foreign key (nycode) references Motels(motelcode),
+    foreign key (roomcode) references Rooms(roomcode)
 );
 
 create table LAMotel (
-    motelcode int,
+    lacode int,
     roomNum int,
     citySt varchar(50),
     roomType varchar(50),
     roomcode int,
-    primary key (motelcode) 
-    foreign key (motelcode) references Motels(motelcode),
-    foreign key (roomcode) references Rooms(roomcode),
+    primary key (roomcode),
+    foreign key (lacode) references Motels(motelcode),
+    foreign key (roomcode) references Rooms(roomcode)
 );
 
 create table DenverMotel (
-    motelcode int,
+    denvercode int,
     roomNum int,
     citySt varchar(50),
     roomType varchar(50),
     roomCode int,
-    primary key (motelcode) 
-    foreign key (motelcode) references Motels(motelcode),
-    foreign key (roomcode) references Rooms(roomcode),
-); 
+    primary key (roomcode),
+    foreign key (denvercode) references Motels(motelcode),
+    foreign key (roomcode) references Rooms(roomcode)
+);

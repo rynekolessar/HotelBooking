@@ -17,7 +17,7 @@ INSERT INTO ChicagoMotel(motelcode, roomNum, citySt, roomType, roomcode) VALUES
 INSERT INTO LAMotel(motelcode, roomNum, citySt, roomType, roomcode) VALUES
     (200, 2, 'Los Angeles, CA', 'Suite', 001),
     (200, 5, 'Los Angeles, CA', 'King', 002),
-    (200, 10, 'Los Angeles, CA', 'Queen', 003),
+    (200, 10, 'Los Angeles, CA', 'Queen', 003);
 
 INSERT INTO NYMotel(motelcode, roomNum, citySt, roomType, roomcode) VALUES
     (300, 2, 'New York, NY', 'Suite', 001),
@@ -25,6 +25,6 @@ INSERT INTO NYMotel(motelcode, roomNum, citySt, roomType, roomcode) VALUES
     (300, 10, 'New York, NY', 'Queen', 003);
 
 INSERT INTO DenverMotel(id, roomNum, citySt, roomType, roomcode) VALUES
-    (400, 2, 'New York, NY', 'Suite', 001),
-    (400, 5, 'New York, NY', 'King', 001),
-    (400, 10, 'New York, NY', 'Queen', 001);
+    (400, 2, 'Denver, CO', 'Suite', 001),
+    (400, 5, 'Denver, CO', 'King', 002),
+    (400, 10, 'Denver, CO', 'Queen', 003);
