@@ -4,7 +4,6 @@ import com.Motel6.HotelBooking.model.Guest;
 import com.Motel6.HotelBooking.repository.BookingRepository;
 import com.Motel6.HotelBooking.repository.GuestRepository;
 
-import org.h2.command.CommandInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
