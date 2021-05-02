@@ -81,7 +81,7 @@ class BookingController {
             });
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("booking/{id}")
     public ResponseEntity<HttpStatus> deleteBooking(@PathVariable("id") Long id) {
         try {
             repository.deleteById(id);
