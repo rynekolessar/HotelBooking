@@ -1,4 +1,4 @@
-package com.Motel6.HotelBooking.model;
+package com.Motel6.HotelBooking.Reservation;
 
 import java.util.Date;
 import java.util.List;
@@ -7,15 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import com.Motel6.HotelBooking.repository.BookingRepository;
+import lombok.Data;
 
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
+@Table
 public class Booking {
 
     @Id
@@ -32,19 +30,19 @@ public class Booking {
     public long getId(){
         return bookingID;
     }
-    public List<Booking> findAll() {
+    public List<Booking> findAll(){
         return repository.findAll();
     };
 
-    public Booking findById(long bookingID) {
+    public Booking findById(long bookingID){
         return repository.findById(bookingID);
     };
  
-    public void deleteById(long bookingID) {
+    public void deleteById(long bookingID){
         repository.deleteById(bookingID);
     };
 
-    public Booking save(long bookingID) {
+    public Booking save(long bookingID){
         return repository.save(bookingID);
     };
 
@@ -52,11 +50,11 @@ public class Booking {
         return this;
     }
 
-    public void addGuest(Guest newGuest) {
+    public void addGuest(Guest newGuest){
         guestList.add(newGuest);
     }
 
-    public void removeGuest(Guest existingGuest) {
+    public void removeGuest(Guest existingGuest){
         guestList.remove(existingGuest);
     }
 
