@@ -7,9 +7,9 @@ import org.springframework.data.annotation.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 @Getter
 @Setter
-@Entity
 public class Guest {
     @Id public String id;
 

@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BookingRepository extends MongoRepository<Booking, Long>{
+public interface BookingRepository extends MongoRepository<Booking, Long> {
     public Booking findById(long id);
     public List<Booking> findAll();
     public void deleteById(long id);

@@ -12,12 +12,14 @@ create table Motels (
     primary key (motelcode)
 );
 
+
 create table Rooms (
     roomcode int,
     roomType varchar(50),
     cost decimal (10,2),
     primary key (roomcode)
 );
+
 
 create table ChicagoMotel (
     chicagocode int,
@@ -30,6 +32,7 @@ create table ChicagoMotel (
     foreign key (roomcode) references Rooms(roomcode)
 );
 
+
 create table NYMotel (
     nycode int,
     roomNum int,
@@ -41,6 +44,7 @@ create table NYMotel (
     foreign key (roomcode) references Rooms(roomcode)
 );
 
+
 create table LAMotel (
     lacode int,
     roomNum int,
@@ -51,6 +55,7 @@ create table LAMotel (
     foreign key (lacode) references Motels(motelcode),
     foreign key (roomcode) references Rooms(roomcode)
 );
+
 
 create table DenverMotel (
     denvercode int,

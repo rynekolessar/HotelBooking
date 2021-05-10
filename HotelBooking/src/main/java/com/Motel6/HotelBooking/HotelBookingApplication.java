@@ -1,19 +1,23 @@
 package com.Motel6.HotelBooking;
 
 import com.Motel6.HotelBooking.model.Guest;
-import com.Motel6.HotelBooking.repository.BookingRepository;
 import com.Motel6.HotelBooking.repository.GuestRepository;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.context.annotation.Bean;
 
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 @SpringBootApplication
-public class HotelBookingApplication implements CommandLineRunner{
-
-	@Autowired
-	BookingRepository bookingRepository;
+public class HotelBookingApplication {
+	// @Autowired
+	// BookingRepository bookingRepository;
 
 	@Autowired
 	GuestRepository guestRepository;
@@ -22,33 +26,26 @@ public class HotelBookingApplication implements CommandLineRunner{
 		SpringApplication.run(HotelBookingApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		deleteAll();
-		addSampleData();
-		listAll();
-		findByLastName();
-	}
+	private static final Logger logger = LoggerFactory.getLogger(HotelBookingApplication.class);
 
-	public void deleteAll() {
-		System.out.println("Deleting all records...");
-		guestRepository.deleteAll();
-	}
+	@Bean
+	public CommandLineRunner demo(GuestRepository repository) {
+		return (args) -> {
+			logger.info("Deleting all records...");
+			repository.deleteAll();
 
-	public void addSampleData() {
-		System.out.print("Adding sample data");
-		guestRepository.save(new Guest("Ryne", "Kolesssar"));
-		guestRepository.save(new Guest("Johnny", "Appleseed"));
-		guestRepository.save(new Guest("Joe", "Biden"));
-	}
+			logger.info("Adding sample data...");
+			repository.save(new Guest("Ryne", "Kolesssar"));
+			repository.save(new Guest("Johnny", "Appleseed"));
+			repository.save(new Guest("Joe", "Biden"));
 
-	public void listAll() {
-		System.out.println("Listing Sample Data");
-		guestRepository.findAll().forEach(g -> System.out.println(g));
-	}
+			logger.info("Listing Sample Data...");
+			logger.info("----------------------");
+			repository.findAll().forEach(System.out::println);
 
-	public void findByLastName() {
-		System.out.println("Finding By Last Name");
-		guestRepository.findByLastName("lastName").forEach(g -> System.out.println(g));
+			logger.info("Guests found with findByLastName('Biden')");
+			logger.info("-----------------------------------------");
+			repository.findByLastName("Biden").forEach(System.out::println);
+		};
 	}
 }
