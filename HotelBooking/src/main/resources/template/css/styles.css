@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("/Users/nghia_h_le/SE ZIP/SE452 - Object-Oriented Enterprise Computing/Class Project/HotelBooking/HotelBooking/src/main/resources/template/img/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+}
+
+.landingbox {
+  width: 320px;
+  height: 420px;
+  background: rgb(71, 85, 76);
+  color: rgb(36, 36, 36);
+  box-shadow: inset;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+  opacity: 0.9;
+}
+
+.landingbox label {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.landingbox input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.landingbox input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: rgb(59, 112, 192);
+  border-radius: 20px;
+  color: aliceblue;
+}
+
+.landingbox input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: aquamarine;
+}
+
+.landingbox a {
+  text-decoration: none;
+  font-size: 12;
+  line-height: 25px;
+  color: rgb(44, 44, 44);
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: -50px;
+}
+
+.landingbox a:hover {
+  color: rgb(134, 134, 134);
+}
+
+.form {
+  top: 70%;
+  left: 30%;
+  color: rgb(57, 57, 184);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
