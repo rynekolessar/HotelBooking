@@ -53,6 +53,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .logoutSuccessUrl("/").and().exceptionHandling();
     }
 
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .inMemoryAuthentication()
+                .withUser("admin").password("admin").roles("ADMIN", "USER")
+                .and().withUser("user").password("user").roles("USER");
+    }
+
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         web

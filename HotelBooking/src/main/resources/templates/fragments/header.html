@@ -3,11 +3,19 @@
     xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <div th:fragment="header-css">
         <!-- this is header-css -->
-        <link rel="stylesheet" type="text/css"
-              href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
     </div>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <link rel='icon' href='favicon.ico' type='image/x-icon' sizes="16x16" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -21,10 +29,10 @@
         <!-- this is header -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
             <a class="navbar-brand" href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-bag-fill" viewBox="0 0 16 16">
                     <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z" />
-                </svg> Motel 6
+                </svg>  --> Motel 6
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,10 +45,10 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li sec:authorize="!isAuthenticated()" class="nav-item">
+                    <li sec:authorize="isAnonymous()" class="nav-item">
                         <a class="btn btn-success my-2 my-sm-0" href="/login" role="button">Log in</a>
                     </li>
-                    <li li sec:authorize="isAuthenticated()" class="nav-item">
+                    <li sec:authorize="isAuthenticated()" class="nav-item">
                         <a class="nav-link disabled" th:text="${username}"></a>
                         <form th:action="@{/logout}" method="post">
                             <button class="btn btn-danger my-2 my-sm-0" type="submit">Sign Out</button>
