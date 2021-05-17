@@ -35,7 +35,7 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity4
   	implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.1.2.RELEASE'
 	compileOnly 'org.projectlombok:lombok'
-	compile 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.5.3'
+	//compile 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.5.3'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	//runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
