@@ -22,10 +22,15 @@
   <div class="container">
     <!-- <div layout:fragment="content"> -->
     <form class="form-signin" th:action="@{/login}" method="post">
-      <img src="../android-chrome-192x192.png" class="img-thumbnail" alt="logo">
+      <br>
+      <div class="text-center">
+        <img th:src="@{/images/android-chrome-192x192.png}" class="" alt="logo" width="192" height="192">
+      </div>
+      <br>
+      <br>
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <div th:if="${param.error}">
-        Invalid email and password.
+        Invalid email and password..
       </div>
       <div th:if="${param.logout}">
         You have been logged out.
