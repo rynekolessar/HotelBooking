@@ -1,12 +1,12 @@
 package com.Motel6.HotelBooking;
 
-import com.Motel6.HotelBooking.model.Guest;
+// import com.Motel6.HotelBooking.model.Guest;
 import com.Motel6.HotelBooking.model.Role;
 import com.Motel6.HotelBooking.repository.GuestRepository;
 import com.Motel6.HotelBooking.repository.RoleRepository;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,7 +28,7 @@ public class HotelBookingApplication {
 		SpringApplication.run(HotelBookingApplication.class, args);
 	}
 
-	private static final Logger logger = LoggerFactory.getLogger(HotelBookingApplication.class);
+	//private static final Logger logger = LoggerFactory.getLogger(HotelBookingApplication.class);
 
 	// @Bean
 	// public CommandLineRunner demo(GuestRepository repository) {
