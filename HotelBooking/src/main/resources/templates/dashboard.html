@@ -17,12 +17,28 @@
 
 </head>
 
-<body>
-  <div th:replace="fragments/header :: header" />
-  <div layout:fragment="content">
-    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-    <h2>This is your Admin Dashboard</h2>
+<main role="main">
+  <div class="dash">
+    <div th:replace="fragments/header :: header" />
+    <div layout:fragment="content">
+      <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+      <h2>This is your Dashboard</h2>
+    </div>
   </div>
-</body>
+  <div class="container">
+    <div class="card" style="width: 18rem;">
+      
+      <div class="card-body">
+        <h5 class="card-title">Booking 1</h5>
+        <h6 class="card-subtitle">Chicago</h6>
+        <li class="list-group-item">Sign in date: 5/17/2021</p>
+        <li class="list-group-item">Sign out date: 5/25/2021</p>
+      </div>
+      <a href="#" class="btn btn-primary">View/edit booking</a>
+    </div>
+  </div>
+
+
+</main>
 
 </html>

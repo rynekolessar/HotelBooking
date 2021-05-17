@@ -19,7 +19,6 @@
 <body>
   <div layout:fragment="content">
     <form class="form-signin" th:action="@{/signup}" method="post">
-      <img src="../android-chrome-512x512.png"
       <h1 class="h3 mb-3 font-weight-normal">Sign Up Here</h1>
       <div th:if="${param.error}">
         Invalid email and password.
