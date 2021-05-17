@@ -47,6 +47,7 @@ public class AuthController {
             userService.saveUser(user);
             modelAndView.addObject("successMessage", "User has been registered successfully!");
             modelAndView.addObject("user", new User());
+            //modelAndView.addObject("fullName", user.getFullName());
             modelAndView.setViewName("login");
 
         }
@@ -59,7 +60,8 @@ public class AuthController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
         modelAndView.addObject("currentUser", user);
-        modelAndView.addObject("fullName", "Welcome " + user.getFullName());
+        //modelAndView.addObject("fullName", user.getFullName().toString());
+        modelAndView.addObject("username", user.getEmail());
         modelAndView.addObject("adminMessage", "Content Available Only for Users with Admin Role");
         modelAndView.setViewName("dashboard");
         return modelAndView;
