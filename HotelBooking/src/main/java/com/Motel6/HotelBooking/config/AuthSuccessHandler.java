@@ -30,6 +30,8 @@ public class AuthSuccessHandler implements AuthenticationSuccessHandler {
         for (GrantedAuthority auth : authentication.getAuthorities()) {
             if ("ADMIN".equals(auth.getAuthority())) {
                 response.sendRedirect("/dashboard");
+            } else {
+                response.sendRedirect("/");
             }
         }
     }
