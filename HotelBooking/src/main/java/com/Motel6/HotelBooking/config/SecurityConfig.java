@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    AuthSuccessHandler AuthSuccessHandler;
+    AuthSuccessHandler authSuccessHandler;
 
     @Bean
     public UserDetailsService mongoUserDetails() {
@@ -39,13 +39,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-            .authorizeRequests()
+        http.authorizeRequests()
             .antMatchers("/").permitAll()
             .antMatchers("/login").permitAll()
             .antMatchers("/signup").permitAll()
             .antMatchers("/dashboard/**").hasAuthority("ADMIN").anyRequest()
-            .authenticated().and().csrf().disable().formLogin().successHandler(AuthSuccessHandler)
+            .authenticated().and().csrf().disable().formLogin().successHandler(authSuccessHandler)
             .loginPage("/login").failureUrl("/login?error=true")
             .usernameParameter("email")
             .passwordParameter("password")
