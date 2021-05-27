@@ -56,7 +56,6 @@ create table LAMotel (
     foreign key (roomcode) references Rooms(roomcode)
 );
 
-
 create table DenverMotel (
     denvercode int,
     roomNum int,

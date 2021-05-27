@@ -27,5 +27,6 @@ public class MotelRepository {
         };
         return template.query(sql, rm);
     }
+
     
 }
