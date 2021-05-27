@@ -9,12 +9,16 @@ import com.Motel6.HotelBooking.model.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class RoomRepository {
 
-    @Autowired Room roomModel;
+    // @Autowired 
+    Room roomModel;
 
-    @Autowired JdbcTemplate template;
+    // @Autowired 
+    JdbcTemplate template;
 
     public List<Room> getAll() {
         String sql = "select * from rooms";

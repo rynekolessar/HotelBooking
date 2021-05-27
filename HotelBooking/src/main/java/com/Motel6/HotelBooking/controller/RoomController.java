@@ -21,7 +21,7 @@ import com.Motel6.HotelBooking.repository.RoomRepository;
 @Controller
 public class RoomController {
 
-    @Autowired
+    // @Autowired
     RoomRepository roomRepository;
 
     @GetMapping("/rooms")

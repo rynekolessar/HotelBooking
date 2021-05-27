@@ -10,7 +10,8 @@ import com.Motel6.HotelBooking.repository.MotelRepository;
 @Controller
 public class MotelController {
 
-    @Autowired MotelRepository motelRepository;
+    // @Autowired 
+    MotelRepository motelRepository;
 
     @GetMapping("/motels")
     public String getAll(Model md) {
